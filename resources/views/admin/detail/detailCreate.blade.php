@@ -70,7 +70,7 @@
                 <table class=" border-spacing rounded-sm border-2 shadow-lg w-full ">
                     <thead>
                       <tr class="bg-green-300 text-center">
-                        <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">စဉ် 1</th>
+                        <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">စဉ်</th>
                         <th class="border  sm:text-xl text-sm px-12 py-2 font-bold">အကြောင်းအရာ</th>
                         <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">အခြား</th>
                       </tr>
