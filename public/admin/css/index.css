@@ -1,0 +1,83 @@
+.logo{
+
+    color:red;
+    font-size:18px;
+
+
+}
+.logo1{
+    font-size:18px;
+    color:blue;
+
+
+}
+.b{
+    font-size:15px;
+}
+.image{
+    width: 18%;
+    height:12%;
+    margin-top:20px;
+
+}
+.nav{
+    background-color:#FFFACD;
+    width:100%;
+
+}
+.img{
+    width:20%;
+}
+.color{
+
+    margin-bottom: 10px;
+    margin-right: 25px;
+    margin-left: 45px;
+}
+
+.flex{
+    display:inline-block;
+    justify-content:center;
+}
+
+.size{
+    width:40%;
+}
+.date{
+    font-size:20px;
+}
+.blank{
+    width:25%;
+}
+.left{
+    width: 40%;
+    font-size:20px;
+    padding:25px;
+}
+.right{
+     font-size:20px;
+     border-bottom: 2px dotted gray;
+}
+.mlogo{
+   padding-left:50px;
+   padding-top:20px;
+}
+.foot{
+    padding-left: 50%;
+}
+.first{
+    padding-top:7%;
+    border-bottom: 2px dotted gray;
+    text-align: center;
+    padding-bottom:1%;
+}
+.type{
+    padding-left:30%;
+    padding-top:3%;
+    text-align:center;
+}
+.R{
+    padding-top:1%;
+}
+
+

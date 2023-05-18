@@ -1,0 +1,116 @@
+.back{
+
+    background-image: url('admin/images/Opacity.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* width: 100%; */
+
+ }
+.image{
+    width:18%;
+    height: 15%;
+    padding-left:1%;
+}
+.blank{
+    width:65%;
+}
+.table{
+    padding-top:35px;
+    padding-bottom:10px;
+}
+.text{
+
+    color:#B8860B;
+    font-size:15px;
+    padding-bottom:1%;
+    border-bottom: 4px solid #FFD700;
+}
+.t{
+    width:65%;
+}
+/* .n{
+    width: 20%;
+} */
+.title1{
+    font-size:15px;
+    color:#B8860B;
+    padding-bottom:0.5%;
+    padding-left:12%;
+}
+.title2{
+    font-size:15px;
+    color:#B8860B;
+    padding-left:9%;
+    padding-bottom:0.5%;
+}
+
+.title3{
+    font-size:15px;
+    color:#B8860B;
+    padding-left:28%;
+    padding-bottom:2%;
+}
+.certificate1{
+    font-size :14px;
+    font-weight: bold;
+    color:#000080;
+    padding-left:42%;
+    padding-bottom:0.5%;
+}
+.certificate2{
+    font-size :14px;
+    font-weight: bold;
+    color:#000080;
+    padding-left:45%;
+    padding-bottom:1%;
+}
+
+.pro{
+    font-size :14px;
+    color:#000080;
+    padding-left:18%;
+    padding-bottom:22px;
+}
+.pro1{
+    font-size :13px;
+    color:#000080;
+    padding-left:12%;
+    padding-bottom:0.5%;
+}
+.pro2{
+    font-size :13px;
+    color:#000080;
+    padding-left:18%;
+    padding-bottom:0.5%;
+}
+.pro3{
+    font-size :13px;
+    color:#000080;
+    padding-left:24%;
+    padding-bottom:5.5%;
+}
+.foot{
+    font-size :11px;
+    color:#191970;
+    padding-left:36%;
+    padding-bottom:0.6%;
+}
+.foot1{
+    font-size :11px;
+    color:#191970;
+    padding-left:23%;
+    padding-bottom:0.8%;
+}
+.foot2{
+    font-size :11px;
+    color:#191970;
+    padding-left:18%;
+    padding-bottom:0.8%;
+}
+.foot3{
+    font-size :13px;
+    color:#191970;
+    padding-left:90%;
+
+}
+
