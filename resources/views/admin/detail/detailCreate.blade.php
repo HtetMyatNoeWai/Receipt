@@ -94,13 +94,13 @@
 
                                 <!-- The dialog -->
                                 <div id="content{{ $index }}"
-                                    class="h-52 hidden sm:fixed absolute z-50 sm:top-1/4 top-1/3 sm:left-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-1.5 space-y-5 drop-shadow-lg bg-yellow-100 mb-12">
+                                    class="h-52 hidden sm:fixed absolute z-50 sm:top-1/4 top-1/3 sm:left-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-1.5 space-y-5 drop-shadow-lg bg-yellow-200 mb-12">
                                     <button id="finish{{ $index }}" class="ml-80 my-1 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150">
                                         <i class="fa-solid fa-rectangle-xmark"></i>
                                     </button>
                                     <h1 class="text-xl font-semibold mt-1 text-indigo-900  ">Update Detail</h1>
 
-                                        <form action="{{ route('detail#update') }}" method="post" class="bg-yellow-100 rounded  flex justify-center ">
+                                        <form action="{{ route('detail#update') }}" method="post" class="bg-yellow-200 rounded  flex justify-center ">
                                             @csrf
                                             <div class="w-full mr-1 ">
                                                 <input type="hidden" name="detail_id" value="{{ $posts->id }}">
@@ -156,7 +156,7 @@
 
                                 <!-- The dialog -->
                                 <div id="detailDialog{{ $index }}"
-                                    class="hidden sm:fixed relative  z-50 top-1/4  sm:left-1/2  -translate-x-1/2 -translate-y-1/2 w-80 bg-yellow-50 rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
+                                    class="hidden sm:fixed relative  z-50 top-1/4  sm:left-1/2  -translate-x-1/2 -translate-y-1/2 w-80 bg-yellow-200 rounded-md px-8 py-6 space-y-5 drop-shadow-lg">
                                     <h1 class="text-xl mt-2 font-semibold text-red-800 ">Are You Sure?</h1>
                                     <h6 class="text-sm mt-0.5 font-bold">Do you really want to delete this title's detail? </h6>
 

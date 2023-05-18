@@ -107,7 +107,7 @@
                 <td class="border  sm:text-lg  text-sm px-2 py-3 text-center">{{$loop->iteration }}</td>
                 <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $pr->category_name }}</td>
                 <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $pr->product_name}}</td>
-                <td class="border sm:text-lg  text-sm px-5 py-3 text-center">{{ $pr->title }}</td>
+                <td class="border sm:text-lg  text-sm px-5 py-3 text-left">{{ $pr->title }}</td>
                 <td class="border sm:text-lg  text-sm px-0.5 py-3 text-center">
 
 
@@ -124,16 +124,14 @@
                     <!-- The dialog -->
                     <div id="UpdateDialog{{ $index }}"
                         class="border-2 border-yellow-500 hidden sm:fixed absolute z-50 top-1/2  left-1/2  -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-2  drop-shadow-lg bg-yellow-100">
-                        <button id="updateClose{{ $index }}" class="ml-72  text-red-500 background-transparent font-bold uppercase  text-2xl my-1.5 ease-linear transition-all duration-150">
-                            <i class="fa-solid fa-rectangle-xmark"></i>
-                        </button>
-                        <h1 class="text-xl font-semibold text-indigo-900 " >Update Category</h1>
+                     
+                        <h1 class="text-xl font-semibold text-indigo-900 ">Update Category</h1>
                         <div class="relative  flex-auto w-full mb-3.5">
                             <form action="{{ route('title#update') }}" method="post" class="bg-yellow-100 rounded p-3 mb-1.5 flex flex-col items-center justify-center ">
                                 @csrf
 
-                            <div class=" w-80 ml-0.5">
-                                <select name="categoryName"  id="" class="shadow-sm text-md border-2 border-blue-300 rounded-lg my-2 w-10/12 py-1 px-1.5 text-dark bg-green-50  outline-none">
+                            <div class=" w-96 ">
+                                <select name="categoryName"  id="" class="ml-0.5 shadow-sm text-md border-2 border-blue-300 rounded-lg my-2 w-11/12 py-1 px-1.5 text-dark bg-green-50  outline-none">
                                     <option value="">Choose Category</option>
                                     @foreach ($category as $c )
                                     <option value="{{ $c->id }}">{{ $c->type_of_donation }}</option>
@@ -144,27 +142,31 @@
                                     {{$message}}
                                 </small>
                                 @enderror
-                                <div class="mt-1.5 w-80 ml-0.5">
-                                    <select name="detailName" class="shadow-sm text-md border-2 border-blue-300 rounded-lg my-2 w-10/12 py-1 px-1.5 text-dark bg-green-50  outline-none" >
+                            </div>
+                                <div class="w-96 ">
+                                    <select name="detailName" class="ml-0.5 shadow-sm text-md border-2 border-blue-300 rounded-lg my-2 w-11/12 py-1 px-1.5 text-dark bg-green-50  outline-none" >
                                         <option value="">Choose Detail</option>
                                         @foreach ($detail as $details )
                                         <option value="{{ $details->id }}">{{ $details->title }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="w-80  flex flex-col items-center justify-center">
+                                <div class="w-96  flex flex-col items-center justify-center">
                                     <input type="hidden" name="title_id" value="{{ $pr->id }}">
-                                    <input class="shadow-sm text-md border-2 border-blue-300 rounded-lg mt-3 w-10/12 py-1 px-1.5 text-dark bg-green-50  outline-none" id="username" type="text" name="name" placeholder="Update Category" value="{{ old('name',$pr->product_name) }}">
+                                    <input class="shadow-sm text-md border-2 border-blue-300 rounded-lg my-2 w-11/12 py-1 px-1.5 text-dark bg-green-50  outline-none" id="username" type="text" name="name" placeholder="Update Category" value="{{ old('name',$pr->product_name) }}">
                                 </div>
                                 @error('name')
                                 <small class="text-red-500">
                                     {{$message}}
                                 </small>
                                 @enderror
-                            </div>
-                                <div class="mt-2.5  w-1/3 ">
-                                    <button class="shadow ml-4  border rounded-lg my-2 py-2 px-2.5 text-dark bg-indigo-500  outline-none" type="submit">
+                            
+                                <div class="mt-2.5 flex justify-center w-full ">
+                                    <button class="w-1/3 shadow   border rounded-lg my-2 py-2 px-2.5 text-dark bg-indigo-500 mr-1.5 outline-none" type="submit">
                                         <h6 class="text-white text-md">Update</h6>
+                                    </button>
+                                    <button id="updateClose{{ $index }}" class=" w-1/3 shadow  ml-1.5 border rounded-lg my-2 py-2 px-2.5 text-dark bg-red-500  outline-none ease-linear transition-all duration-150">
+                                        <h6 class="text-white text-md">Close</h6>
                                     </button>
                                 </div>
                             </form>

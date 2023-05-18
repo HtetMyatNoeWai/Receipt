@@ -35,7 +35,7 @@
                         <div class="relative  flex-auto w-full mt-4">
                             <form action="{{ route('cart#post') }}" method="post" class=" flex flex-col items-center justify-center mb-4">
                                 @csrf
-                                <div class="mt-2.5 w-full flex justify-center mx-1.5 ">
+                                
 
                                     <select name="categoryName" class="border-2 border-blue-300 rounded-md py-2 w-3/12 mr-2.5 text-dark bg-yellow-300 outline-none text-sm">
                                         <option value="" class="text-center ">Choose Category</option>
@@ -59,7 +59,7 @@
                                         @endforeach
                                     </select>
 
-                            </div>
+                           
                                 <div class="w-96  flex flex-col items-center justify-center">
                                     <label class="mr-64 text-md ml-3 mt-2.5">Name/အမည်</label>
                                     <input class="mt-3 border-2 border-blue-300 rounded  w-11/12 py-2 px-1.5 text-dark bg-yellow-100 outline-none" id="username" type="text" name="cart_name" placeholder="Enter Name" value="{{ old('cart_name') }}">
@@ -141,11 +141,11 @@
             @foreach ($rec as $index=>$rece )
             <tr class="bg-yellow-100 ">
                 <td class="border  sm:text-lg  text-sm px-2 py-3 text-center">{{$loop->iteration }}</td>
-                <td class="border  sm:text-lg  text-sm px-2 py-3 text-center">{{ $rece->name }}</td>
+                <td class="border  sm:text-lg  text-sm px-2 py-3 text-left">{{ $rece->name }}</td>
                 <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $rece->address }}</td>
                 <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $rece->amount }}</td>
-                <td class="border sm:text-lg  text-sm px-5 py-3 text-center">{{ $rece->product_name }}</td>
-                <td class="border sm:text-lg  text-sm px-5 py-3 text-center mr-2">{{ $rece->receiver_name }}</td>
+                <td class="border sm:text-lg  text-sm px-5 py-3 text-left">{{ $rece->product_name }}</td>
+                <td class="border sm:text-lg  text-sm px-5 py-3 text-left mr-2">{{ $rece->receiver_name }}</td>
                 <td class="border sm:text-md text-sm px-0.5 py-3 text-center">
 
                 {{-- Print Icon --}}
