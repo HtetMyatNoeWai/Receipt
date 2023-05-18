@@ -21,7 +21,7 @@
                         <div class="relative ">
 
                           <!--content-->
-                          <div class="border-2 border-gray-100 rounded-lg shadow-lg relative flex flex-col  bg-yellow-100  ">
+                          <div class="border-2 border-gray-100 rounded-lg shadow-lg relative flex flex-col  bg-yellow-100 ">
                                 <button class="ml-96 mr-3 my-2 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
                                     <i class="fa-solid fa-rectangle-xmark"></i>
                                 </button>
@@ -94,26 +94,26 @@
 
                                 <!-- The dialog -->
                                 <div id="content{{ $index }}"
-                                    class=" hidden sm:fixed absolute z-50 sm:top-1/4 top-1/3 sm:left-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-6 space-y-5 drop-shadow-lg bg-yellow-100">
-                                    <button id="finish{{ $index }}" class="ml-64 my-1 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150">
+                                    class="h-52 hidden sm:fixed absolute z-50 sm:top-1/4 top-1/3 sm:left-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-1.5 space-y-5 drop-shadow-lg bg-yellow-100 mb-12">
+                                    <button id="finish{{ $index }}" class="ml-80 my-1 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150">
                                         <i class="fa-solid fa-rectangle-xmark"></i>
                                     </button>
                                     <h1 class="text-xl font-semibold mt-1 text-indigo-900  ">Update Detail</h1>
-                                    <div class="relative  flex-auto w-full">
-                                        <form action="{{ route('detail#update') }}" method="post" class="bg-yellow-100 rounded  flex flex-col items-center justify-center ">
+
+                                        <form action="{{ route('detail#update') }}" method="post" class="bg-yellow-100 rounded  flex justify-center ">
                                             @csrf
-                                            <div class="w-96  flex flex-col items-center justify-center">
+                                            <div class="w-full mr-1 ">
                                                 <input type="hidden" name="detail_id" value="{{ $posts->id }}">
-                                                <input class="text-sm border-2 border-blue-300 rounded-lg mt-2 w-9/12 py-2 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="detail_name" placeholder="Update Detail" value="{{ old('detail_name',$posts->title) }}">
+                                                <input class="text-sm border-2 border-blue-300 rounded-lg mt-2 w-full py-2 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="detail_name" placeholder="Update Detail" value="{{ old('detail_name',$posts->title) }}">
                                             </div>
                                             @error('detail_name')
                                             <small class="text-red-500 ">
                                                 {{ $message }}
                                             </small>
                                             @enderror
-                                            <div class="mt-4  w-1/3 ">
-                                                <button class="shadow ml-32  border rounded-lg my-2 py-1.5 px-2 text-dark bg-blue-500  outline-none" type="submit">
-                                                    <h6 class="text-white text-sm">Update</h6>
+                                            <div class="  w-1/4 ">
+                                                <button class="shadow border rounded-lg my-2 py-2 px-2 text-dark bg-blue-500  outline-none" type="submit">
+                                                    <h6 class="text-white text-md">Update</h6>
                                                 </button>
                                             </div>
                                         </form>
