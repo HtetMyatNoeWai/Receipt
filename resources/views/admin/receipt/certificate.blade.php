@@ -34,12 +34,18 @@
                 {{-- <td class="n"></td> --}}
                 <td class="title3">ရှမ်းပြည်နယ်ဗုဒ္ဓတက္ကသိုလ် အဓွန့်ရှည်တည်တန့်နိုင်ရန်</td>
             </tr>
+        </table>
+        <table>
             <tr>
+                <td class="cer"></td>
                 <td class="certificate1">{{ $certificate->address }} နေ</td>
             </tr>
             <tr>
+                <td class="cer"></td>
                 <td class="certificate2">{{ $certificate->name }} မှ</td>
             </tr>
+        </table>
+        <table>
             <tr>
                 <td class="pro">{{ $certificate->product_name  }}အလှူပဒေသာပင်အတွက် အလှူတော်ငွေ-{{ $certificate->amount }}တိတိ လှူဒါန်းပါသည်။</td>
             </tr>

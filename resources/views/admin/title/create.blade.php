@@ -125,7 +125,7 @@
                     <div id="UpdateDialog{{ $index }}"
                         class="border-2 border-yellow-500 hidden sm:fixed absolute z-50 top-1/2  left-1/2  -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-2  drop-shadow-lg bg-yellow-100">
                      
-                        <h1 class="text-xl font-semibold text-indigo-900 ">Update Category</h1>
+                        <h1 class="text-xl font-semibold text-indigo-900 mt-5">Update Category</h1>
                         <div class="relative  flex-auto w-full mb-3.5">
                             <form action="{{ route('title#update') }}" method="post" class="bg-yellow-100 rounded p-3 mb-1.5 flex flex-col items-center justify-center ">
                                 @csrf

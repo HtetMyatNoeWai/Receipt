@@ -54,21 +54,21 @@
     font-size :14px;
     font-weight: bold;
     color:#000080;
-    padding-left:42%;
+    padding-left:2%;
     padding-bottom:0.5%;
 }
 .certificate2{
     font-size :14px;
     font-weight: bold;
     color:#000080;
-    padding-left:45%;
+    padding-left:3%;
     padding-bottom:1%;
 }
 
 .pro{
     font-size :14px;
     color:#000080;
-    padding-left:18%;
+    padding-left:16%;
     padding-bottom:22px;
 }
 .pro1{
@@ -112,5 +112,8 @@
     color:#191970;
     padding-left:90%;
 
+}
+.cer{
+   padding-left:43%;
 }
 

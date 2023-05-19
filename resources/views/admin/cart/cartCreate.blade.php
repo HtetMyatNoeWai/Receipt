@@ -29,31 +29,31 @@
 
             <!--content-->
 
-            <div class="border-2 border-indigo-700 rounded-lg shadow-lg relative flex flex-col  bg-green-200  ">
+            <div class="border-2 border-indigo-700 rounded-lg shadow-lg relative flex flex-col  bg-yellow-200  ">
                 <!--header-->
-                    <h1 class="text-2xl mt-4 mx-auto text-indigo-700">Add Donation</h1>
+                    <h1 class="text-2xl mt-10 mx-auto text-indigo-700">Add Donation</h1>
                         <div class="relative  flex-auto w-full mt-4">
                             <form action="{{ route('cart#post') }}" method="post" class=" flex flex-col items-center justify-center mb-4">
                                 @csrf
                                 
 
-                                    <select name="categoryName" class="border-2 border-blue-300 rounded-md py-2 w-3/12 mr-2.5 text-dark bg-yellow-300 outline-none text-sm">
-                                        <option value="" class="text-center ">Choose Category</option>
+                                    <select name="categoryName" class="mt-1.5 border-2 border-blue-300 rounded-md py-2 w-11/12 text-dark bg-gray-100 shadow-sm outline-none text-sm">
+                                        <option value="">Choose Category</option>
                                         @foreach ($cat as $cate)
                                         <option value="{{ $cate->id }}" >{{ $cate->type_of_donation }}</option>
                                         @endforeach
                                     </select>
 
-                                    <select name="productName" class="border-2 border-blue-300 rounded-md py-2 w-3/12 mr-2.5 text-dark bg-yellow-300 outline-none text-sm">
-                                        <option value="" class="text-center"> Choose Title</option>
+                                    <select name="productName" class="mt-3 border-2 border-blue-300 rounded-md py-2 w-11/12 text-dark bg-gray-100 shadow-sm outline-none text-sm">
+                                        <option value=""> Choose Title</option>
                                         @foreach ($pro as $prod)
                                         <option value="{{ $prod->id }}">{{ $prod->product_name }}</option>
                                         @endforeach
                                     </select>
 
 
-                                    <select name="detailsName" class="border-2 border-blue-300 rounded-md py-2 w-3/12  text-dark bg-yellow-300 outline-none text-sm">
-                                        <option value="" class="text-center">  Choose Detail</option>
+                                    <select name="detailsName" class="mt-3 border-2 border-blue-300 rounded-md py-2 w-11/12  text-dark bg-gray-100 shadow-sm outline-none text-sm">
+                                        <option value="" >  Choose Detail</option>
                                         @foreach ($det as $deta)
                                         <option value="{{ $deta->id }}">{{ $deta->title }}</option>
                                         @endforeach
@@ -61,8 +61,8 @@
 
                            
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                    <label class="mr-64 text-md ml-3 mt-2.5">Name/အမည်</label>
-                                    <input class="mt-3 border-2 border-blue-300 rounded  w-11/12 py-2 px-1.5 text-dark bg-yellow-100 outline-none" id="username" type="text" name="cart_name" placeholder="Enter Name" value="{{ old('cart_name') }}">
+                                   
+                                    <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="cart_name" placeholder="Enter Name" value="{{ old('cart_name') }}">
                                 </div>
                                 @error('cart_name')
                                     <small class="text-red-500">
@@ -70,8 +70,8 @@
                                     </small>
                                 @enderror
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                    <label class="mr-64 text-md ml-3 mt-2.5">Address/လိပ်စာ</label>
-                                    <input class="mt-3 border-2 border-blue-300 rounded  w-11/12 py-2 px-1.5 text-dark bg-yellow-100 outline-none" id="username" type="text" name="address" placeholder="Enter Address" value="{{ old('address') }}">
+                                   
+                                    <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="address" placeholder="Enter Address" value="{{ old('address') }}">
                                 </div>
                                 @error('address')
                                     <small class="text-red-500">
@@ -79,8 +79,8 @@
                                     </small>
                                 @enderror
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                    <label class="mr-64 text-md ml-3 mt-2.5">Amount/အလှူငွေ</label>
-                                    <input class="mt-3 border-2 border-blue-300 rounded  w-11/12 py-2 px-1.5 text-dark bg-yellow-100 outline-none" id="username" type="text" name="amount" placeholder="Enter Amount" value="{{ old('amount') }}">
+                                   
+                                    <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="amount" placeholder="Enter Amount" value="{{ old('amount') }}">
                                 </div>
                                 @error('amount')
                                     <small class="text-red-500">
@@ -88,15 +88,15 @@
                                     </small>
                                 @enderror
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                    <label class="mr-48 text-md ml-3 mt-2.5">Received By/ငွေလက်ခံသူ</label>
-                                    <input class="mt-3 border-2 border-blue-300 rounded  w-11/12 py-2 px-1.5 text-dark bg-yellow-100 outline-none" id="username" type="text" name="receiver" placeholder="Enter Receiver Name" value="{{ old('receiver') }}">
+                                   
+                                    <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="receiver" placeholder="Enter Receiver Name" value="{{ old('receiver') }}">
                                 </div>
-                                <div class="mt-2 ">
-                                    <button class="shadow ml-52 border rounded my-2 py-1.5 px-3 text-dark bg-gray-700  outline-none" type="submit">
-                                        <h6 class="text-white text-sm">Save</h2>
+                                <div class="mt-3 flex justify-center mb-6 ml-6">
+                                    <button class="shadow  border rounded-md my-2 py-2 px-3 text-dark bg-indigo-500  outline-none" type="submit">
+                                        <h6 class="text-white text-md">Save</h2>
                                     </button>
-                                    <button class=" shadow ml-6 border rounded my-2 py-1.5 px-3 text-dark bg-red-700  outline-none ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
-                                        <h6 class="text-white text-sm">Close</h2>
+                                    <button class=" shadow ml-1.5 mr-1.5 border rounded-md my-2 py-2 px-3 text-dark bg-red-700  outline-none ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                                        <h6 class="text-white text-md">Close</h2>
                                     </button>
                                 </div>
 
