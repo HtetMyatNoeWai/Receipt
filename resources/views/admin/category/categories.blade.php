@@ -200,7 +200,7 @@
             </div>
         </div>
 
-
+<a href="{{ route('Donor#create') }}">Donor</a>
 
 
 @endsection

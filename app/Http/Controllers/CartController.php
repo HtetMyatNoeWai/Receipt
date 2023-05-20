@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use PDO;
 use App\Models\Cart;
-use App\Models\Product;
-use App\Models\Category;
+use App\Models\donor;
 
 // use Barryvdh\DomPDF\Facade\PDF;
 
+use App\Models\Product;
+use App\Models\Category;
 use App\Models\TitleDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf;
-use PDO;
 
 class CartController extends Controller
 {
@@ -21,12 +22,14 @@ class CartController extends Controller
         $cat=Category::select('categories.id','categories.type_of_donation')->get();
         $pro=Product::select('products.id','products.product_name')->get();
         $det=TitleDetail::select('title_details.id','title_details.title')->get();
+        // $dor=donor::select('donor.id','donor.name','donor.address','donor.receiver_name');
         $rec=Cart::select('carts.*','categories.type_of_donation','products.product_name','title_details.title')
                 ->join('categories','carts.category_id','categories.id')
                 ->join('products','carts.product_id','products.id')
                 ->join('title_details','carts.title_id','title_details.id')
+                // ->join('donor','carts.donor_id','donor.id')
                 ->orderBy('carts.id','desc')
-                ->paginate(30);
+                ->paginate(10);
         return view('admin.cart.cartCreate',compact('cat','pro','det','rec'));
     }
 
@@ -99,7 +102,7 @@ class CartController extends Controller
                 ->where('carts.id',$id)
                 ->first();
 
-        $pdf= LaravelMpdf::loadView('admin.receipt.receiptCreate', compact('users'));
+        $pdf= LaravelMpdf::loadView('admin.receipt.receiptCreate', compact('users'),['format'=>'A5']);
 
         return $pdf->stream();
 
@@ -122,7 +125,7 @@ class CartController extends Controller
                 ->where('carts.id',$id)
                 ->first();
 
-        $pdf= LaravelMpdf::loadView('admin.receipt.certificate', compact('certificate'));
+        $pdf= LaravelMpdf::loadView('admin.receipt.certificate', compact('certificate'),['format'=>'A4']);
 
         return $pdf->stream();
     }

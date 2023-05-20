@@ -35,7 +35,7 @@
                         <div class="relative  flex-auto w-full mt-4">
                             <form action="{{ route('cart#post') }}" method="post" class=" flex flex-col items-center justify-center mb-4">
                                 @csrf
-                                
+
 
                                     <select name="categoryName" class="mt-1.5 border-2 border-blue-300 rounded-md py-2 w-11/12 text-dark bg-gray-100 shadow-sm outline-none text-sm">
                                         <option value="">Choose Category</option>
@@ -59,9 +59,9 @@
                                         @endforeach
                                     </select>
 
-                           
+
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                   
+
                                     <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="cart_name" placeholder="Enter Name" value="{{ old('cart_name') }}">
                                 </div>
                                 @error('cart_name')
@@ -70,7 +70,7 @@
                                     </small>
                                 @enderror
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                   
+
                                     <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="address" placeholder="Enter Address" value="{{ old('address') }}">
                                 </div>
                                 @error('address')
@@ -79,7 +79,7 @@
                                     </small>
                                 @enderror
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                   
+
                                     <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="amount" placeholder="Enter Amount" value="{{ old('amount') }}">
                                 </div>
                                 @error('amount')
@@ -88,7 +88,7 @@
                                     </small>
                                 @enderror
                                 <div class="w-96  flex flex-col items-center justify-center">
-                                   
+
                                     <input class="mt-3 border-2 border-blue-300 rounded-md  w-11/12 py-2 px-1.5 text-dark bg-gray-100 shadow-sm outline-none" id="username" type="text" name="receiver" placeholder="Enter Receiver Name" value="{{ old('receiver') }}">
                                 </div>
                                 <div class="mt-3 flex justify-center mb-6 ml-6">

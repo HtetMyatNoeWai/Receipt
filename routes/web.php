@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DonorController;
 use App\Http\Controllers\TitleDetailController;
 use App\Models\Cart;
 use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf;
@@ -104,6 +105,20 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 
 
+        //donor
+        Route::group(['prefix'=>'Donor','middleware'=>'admin_middleware'],function(){
+
+            //Create Donor
+            Route::get('createDonor',[DonorController::class,'createDonor'])->name('Donor#create');
+
+            //Post Donor
+            // Route::get('postDonor',[DonorController::class,'postDonor'])->name('Donor#post');
+
+            Route::post('postingDonor',[DonorController::class,'postingDonor'])->name('Donor#posting');
+
+        });
+
+
 });
 
 Route::group(['prefix'=>'user','middleware'=>'user_middleware'],function(){
@@ -111,6 +126,8 @@ Route::group(['prefix'=>'user','middleware'=>'user_middleware'],function(){
         return view('user.home');
     })->name('user#home');
 });
+
+
 
 
 
