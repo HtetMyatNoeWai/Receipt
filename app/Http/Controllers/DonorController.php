@@ -7,18 +7,26 @@ use Illuminate\Http\Request;
 
 class DonorController extends Controller
 {
-    //create
+    //Create Donor
     public function createDonor(){
-        $posting=donor::get();
+        $posting=donor::paginate(3);
         return view('admin.donor.donation',compact('posting'));
     }
 
-    //creation
+    //Creation Donor
     public function postingDonor(Request $request){
        $donate= $this->donorCreation($request);
        donor::create($donate);
        return redirect()->route('Donor#create');
     }
+
+    //Delete Donor
+    public function deleteDonor($id){
+        donor::where('id',$id)->delete();
+        return redirect()->route('Donor#create');
+    }
+
+
 
 
     private function donorCreation($request){

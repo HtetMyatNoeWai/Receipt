@@ -25,7 +25,7 @@
                 <div class="mt-1.5">
                         <input class="mb-4 py-2 px-2.5 bg-green-50 border-2 border-blue-500 rounded-lg text-md w-3/5 outline-none shadow-md" type="text" name="donorReceiver" placeholder="Enter Receiver Name">
                 </div>
-                <div class="ml-32">
+                <div class="ml-28">
                     <button type="submit" class="shadow-md py-2 px-3.5 text-center text-md border-2 border-green-100 bg-indigo-600 rounded-md text-white font-bold">Save</button>
                 </div>
             </div>
@@ -33,7 +33,7 @@
         </form>
 
             <div class="mt-6 ml-10 w-1/2">
-                @foreach ($posting as $pose)
+                @foreach ($posting as $index=>$pose)
                     <div class="flex-col">
                         <table class="w-4/5 mb-4 ">
                             <tr>
@@ -49,10 +49,36 @@
                                 <td class="w-3/5 text-center">{{ $pose->receiver_name }}</td>
                             </tr>
                             <tr class="border-b-2 border-gray-200">
-
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <button class="px-1.5 bg-blue-500 first-letter rounded-md mb-1.5 mr-1.5">
+                                        <a href="">
+                                            <i class="text-sm fa-solid fa-plus text-white"></i>
+                                        </a>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="px-1.5 bg-gray-500 first-letter rounded-md mb-1.5 mr-1.5">
+                                        <a href="">
+                                            <i class="text-sm fa-solid fa-pen-nib text-white"></i>
+                                        </a>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="px-1.5 bg-red-500 first-letter rounded-md mb-1.5">
+                                        <a href="{{ route('Donor#delete',$pose->id) }}">
+                                            <i class="text-sm fa-solid fa-trash text-white"></i>
+                                        </a>
+                                    </button>
+                                </td>
                             </tr>
                         </table>
                     </div>
                 @endforeach
+                <div class="my-3">
+                    {{$posting->links()}}
+                </div>
             </div>
+
 @endsection

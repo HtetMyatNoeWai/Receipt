@@ -105,17 +105,20 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 
 
-        //donor
+        //Donor
         Route::group(['prefix'=>'Donor','middleware'=>'admin_middleware'],function(){
 
             //Create Donor
             Route::get('createDonor',[DonorController::class,'createDonor'])->name('Donor#create');
 
             //Post Donor
-            // Route::get('postDonor',[DonorController::class,'postDonor'])->name('Donor#post');
-
             Route::post('postingDonor',[DonorController::class,'postingDonor'])->name('Donor#posting');
 
+            //Delete Donor
+            Route::get('deleteDonor/{id}',[DonorController::class,'deleteDonor'])->name('Donor#delete');
+
+            //Update Donor
+            Route::post('updateDonor/{id}',[DonorController::class,'updateDonor'])->name('Donor#update');
         });
 
 
