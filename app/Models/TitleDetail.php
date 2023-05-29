@@ -9,6 +9,7 @@ class TitleDetail extends Model
 {
     use HasFactory;
     protected $fillable=[
+        'p_id',
         'title',
     ];
 }

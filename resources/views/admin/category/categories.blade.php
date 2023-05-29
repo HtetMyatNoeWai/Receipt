@@ -5,16 +5,22 @@
 @section('something','Category')
 @section('nothing','Detail')
 @section('anything','Title')
+@section('everything','Donor')
 @section('detail','လှူဒါန်းနိုင်သော အလှူပဒေသာပင်များ')
 
-        <div class=" bg-gray-100  w-full  " >
-            <div class=" ml-10 mb-4">
-                <div class=" bg-gray-100  w-full " >
+    <div class=" bg-gray-100  w-full  " >
+            <div class=" ml-10 mb-4 ">
+                <div class=" bg-gray-100  w-full flex justify-around" >
                     <div class="pt-5 ml-10 ">
                         <button class=" text-dark bg-blue-200 font-bold rounded-lg border-1 border-dark shadow-md py-2 sm:px-4 px-2 mr-1 mb-1  duration-150" type="button" onclick="toggleModal('modal-id')">
                             +Add Category
                           </button>
 
+                    </div>
+                    <div class="pt-5 ">
+                        <button class=" text-dark bg-blue-200 font-bold rounded-lg border-1 border-dark shadow-md py-2 sm:px-4 px-2 mr-1 mb-1">
+                           <a href="{{ route('link#create') }}" >Product</a>
+                        </button>
                     </div>
 
                     <div class="hidden overflow-x-hidden  fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
@@ -200,7 +206,7 @@
             </div>
         </div>
 
-<a href="{{ route('Donor#create') }}">Donor</a>
+
 
 
 @endsection

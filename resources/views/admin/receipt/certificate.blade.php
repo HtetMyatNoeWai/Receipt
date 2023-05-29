@@ -38,16 +38,22 @@
         <table>
             <tr>
                 <td class="cer"></td>
-                <td class="certificate1">{{ $certificate->address }} နေ</td>
+                <td class="certificate1">{{$attribute->daddress }} နေ</td>
             </tr>
             <tr>
                 <td class="cer"></td>
-                <td class="certificate2">{{ $certificate->name }} မှ</td>
+                <td class="certificate2">{{$attribute->dname }} မှ</td>
             </tr>
         </table>
+        {{-- <div>{{ $certificate }}</div> --}}
         <table>
+            @foreach($certificate as $cer)
             <tr>
-                <td class="pro">{{ $certificate->product_name  }}အလှူပဒေသာပင်အတွက် အလှူတော်ငွေ-{{ $certificate->amount }}တိတိ လှူဒါန်းပါသည်။</td>
+                <td class="pro">{{$cer->pname  }}အတွက် အလှူတော်ငွေ-{{$cer->amount }} </td>
+            </tr>
+            @endforeach
+            <tr>
+                <td class="pro"> စုစုပေါင်း{{ $totalPrice }} လှူဒါန်းပါသည်။</td>
             </tr>
             <tr>
                 <td class="pro1">ဤကဲ့သို့ ဗုဒ္ဓမြတ်စွာ သာသနာတော်အတွက် နိဗ္ဗာန်ရည်မှန်း၍ လှူဒါန်းချီးမြှောက်ထောက်ပံ့သည့်အတွက်</td>
@@ -75,7 +81,7 @@
                 <td class="foot2">အဂ္ဂမဟာသဒ္ဓမ္မဇောတိကဓဇ၊ အဂ္ဂမဟာဂန္ထဝါစကပဏ္ဍိတ၊ မဟာဓမ္မကထိကဗဟုဇနဟိတရေ</td>
             </tr>
             <tr>
-                <td class="foot3">{{ $certificate->created_at->Format('j-F-Y') }}</td>
+                <td class="foot3">{{$attribute->created_at->Format('j-F-Y') }}</td>
             </tr>
         </table>
     </div>

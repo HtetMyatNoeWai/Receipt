@@ -8,8 +8,13 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonorController;
+use App\Http\Controllers\DonorProductController;
+use App\Http\Controllers\ProductTitleController;
+use App\Http\Controllers\TestingController;
+use App\Http\Controllers\TitleController;
 use App\Http\Controllers\TitleDetailController;
 use App\Models\Cart;
+use GuzzleHttp\Middleware;
 use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf;
 
 /*
@@ -118,8 +123,42 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
             Route::get('deleteDonor/{id}',[DonorController::class,'deleteDonor'])->name('Donor#delete');
 
             //Update Donor
-            Route::post('updateDonor/{id}',[DonorController::class,'updateDonor'])->name('Donor#update');
+            Route::post('updateDonor',[DonorController::class,'updateDonor'])->name('Donor#update');
+
         });
+
+    //Receipt Page
+    Route::group(['prefix'=>'Receipt','middleware'=>'admin_middleware'],function(){
+
+        //Create Receipt
+        Route::get('createReceipt',[DonorProductController::class,'createReceipt'])->name('receipt#create');
+
+        //Post Receipt
+        Route::post('postReceipt',[DonorProductController::class,'postReceipt'])->name('receipt#post');
+
+        //PDF
+        Route::get('certificate/{product_id}',[DonorProductController::class,'certificatePDF'])->name('certificate#pdf');
+
+        Route::get('receiptPDF/{id}',[DonorProductController::class,'receiptPDF'])->name('receipt#pdf');
+    });
+
+
+
+
+    //Join Table
+    Route::group(['prefix'=>'Tables','middleware'=>'admin_middleware'],function(){
+
+      
+
+        Route::get('linkCreate',[ProductTitleController::class,'linkCreate'])->name('link#create');
+
+        Route::get('filter/{id}',[ProductTitleController::class,'filter'])->name('link#filter');
+
+        Route::get('filterP/{id}',[ProductTitleController::class,'filterP'])->name('link#filterP');
+
+        // Route::get('linkPost',[ProductController::class,'linkPost'])->name('link#post');
+    });
+
 
 
 });

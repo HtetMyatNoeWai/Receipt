@@ -4,6 +4,7 @@
 @section('something','Category')
 @section('nothing','Detail')
 @section('anything','Title')
+@section('everything','Donor')
 @section('detail','လှူဒါန်းနိုင်သော အလှူပဒေသာပင်အခွဲများ')
 @section('content')
 
@@ -28,16 +29,21 @@
                             <!--header-->
                                 <h1 class="text-xl ml-9 mb-3 text-indigo-900 ">Add Detail</h1>
 
-                                    <form action="{{ route('detail#post') }}" method="post" class="bg-yellow-100 rounded flex justify-center mb-14">
+                                    <form action="{{ route('detail#post') }}" method="post" class="bg-yellow-100 rounded  mb-14">
                                         @csrf
-                                        <div class="w-full mr-1">
-                                            <input class="shadow-sm ml-8 border-2 border-blue-300 rounded-lg w-full py-2.5 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="detail_name" placeholder="Add Detail">
+                                        <div class="mt-1 w-96 ml-8">
+                                            <select name="productName" id="" class="border-2 border-blue-300 rounded-lg my-2 w-11/12 py-2 px-0.5 text-dark bg-green-50 outline-none">
+                                                <option value="">Choose Products</option>
+                                                @foreach ($product as $p )
+                                                <option value="{{ $p->id }}">{{ $p->product_name }}</option>
+                                                @endforeach
+            
+                                            </select>
                                         </div>
-                                        @error('detail_name')
-                                            <small class="text-red-500 ">
-                                                {{ $message }}
-                                            </small>
-                                        @enderror
+                                        <div class=" w-96 mb-2">
+                                            <input class="shadow-sm ml-8 border-2 border-blue-300 rounded-lg w-11/12 py-2.5 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="detail_name" placeholder="Add Detail">
+                                        </div>
+                                       
                                         <div class=" w-5/12">
                                             <button class="shadow  w-2/4 ml-10  border-2 rounded-lg py-2 px-2.5 text-dark bg-blue-500  outline-none" type="submit">
                                                 <h6 class="text-white text-lg">Save</h6>
@@ -71,6 +77,7 @@
                     <thead>
                       <tr class="bg-green-300 text-center">
                         <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">စဉ်</th>
+                        <th class="border  sm:text-xl text-sm px-12 py-2 font-bold">အလှူပဒေသာပင်</th>
                         <th class="border  sm:text-xl text-sm px-12 py-2 font-bold">အကြောင်းအရာ</th>
                         <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">အခြား</th>
                       </tr>
@@ -80,6 +87,7 @@
                       <tr class="bg-yellow-100 ">
 
                         <td class="border  sm:text-lg text-sm px-2 py-6 text-center">{{$loop->iteration }}</td>
+                        <td class="border sm:text-lg text-sm px-12 py-6 text-left">{{ $posts->product_name }}</td>
                         <td class="border sm:text-lg text-sm px-12 py-6 text-left">{{ $posts->title }}</td>
                         <td class="border sm:text-lg text-sm px-2 py-6 text-center">
 
@@ -90,21 +98,30 @@
                                 </button>
 
                                 <!-- Overlay element -->
-                                <div id="over{{ $index }}" class="fixed hidden z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60 "></div>
+                                <div id="over{{ $index }}" class="fixed hidden z-40 w-full h-screen inset-0 bg-gray-900 bg-opacity-60 "></div>
 
                                 <!-- The dialog -->
                                 <div id="content{{ $index }}"
-                                    class="h-52 hidden sm:fixed absolute z-50 sm:top-1/4 top-1/3 sm:left-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-1.5 space-y-5 drop-shadow-lg bg-yellow-200 mb-12">
+                                    class=" hidden sm:fixed absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-2 space-y-5 drop-shadow-lg bg-yellow-200 mb-12">
                                     <button id="finish{{ $index }}" class="ml-80 my-1 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150">
                                         <i class="fa-solid fa-rectangle-xmark"></i>
                                     </button>
                                     <h1 class="text-xl font-semibold mt-1 text-indigo-900  ">Update Detail</h1>
 
-                                        <form action="{{ route('detail#update') }}" method="post" class="bg-yellow-200 rounded  flex justify-center ">
+                                        <form action="{{ route('detail#update') }}" method="post" class="bg-yellow-200 rounded   ">
                                             @csrf
-                                            <div class="w-full mr-1 ">
+                                            <div class="mt-1 w-96 ">
+                                                <select name="productName" id="" class="border-2 border-blue-300 rounded-lg my-2 w-11/12 py-2 px-0.5 text-dark bg-green-50 outline-none">
+                                                    <option value="">Choose Products</option>
+                                                    @foreach ($product as $p )
+                                                    <option value="{{ $p->id }}">{{ $p->product_name }}</option>
+                                                    @endforeach
+                
+                                                </select>
+                                            </div>
+                                            <div class="w-96 ">
                                                 <input type="hidden" name="detail_id" value="{{ $posts->id }}">
-                                                <input class="text-sm border-2 border-blue-300 rounded-lg mt-2 w-full py-2 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="detail_name" placeholder="Update Detail" value="{{ old('detail_name',$posts->title) }}">
+                                                <input class="text-sm border-2 border-blue-300 rounded-lg mt-2 w-11/12 py-2 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="detail_name" placeholder="Update Detail" value="{{ old('detail_name',$posts->title) }}">
                                             </div>
                                             @error('detail_name')
                                             <small class="text-red-500 ">

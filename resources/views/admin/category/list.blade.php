@@ -21,9 +21,9 @@
             <img src="{{ asset('admin/images/R.jpg') }}" class="w-16 h-16 sm:ml-16 mb-1 ml-44">
 
         <div class=" ">
-            <ul class="sm:grid gap-3 grid-cols-5 mt-6 mr-6  hidden">
+            <ul class="sm:grid gap-3 grid-cols-7 mt-6 mr-6  hidden">
                 <li>
-                    <a href="{{ route('cart#create') }}" class="text-lg text-blue-900">
+                    <a href="{{ route('receipt#create') }}" class="text-lg text-blue-900">
                         @yield('receipt')
                     </a>
                 </li>
@@ -37,13 +37,21 @@
                         @yield('nothing')
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('title#create') }}" class="text-lg text-blue-900">@yield('anything')</a>
+                <li >
+                    <a href="{{ route('title#create') }}" class="text-lg  text-blue-900">
+                        @yield('anything')
+                    </a>
                 </li>
+                <li class="">
+                    <a href="{{ route('Donor#create') }}" class="text-md  text-blue-900">
+                        @yield('everything')
+                    </a>
+                </li>
+              
                 <li>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
-                        <button type="submit" class="border-1 border-red-500 bg-red-400 text-lg text-center py-1 px-1 mb-1 rounded-2 shadow-sm">Logout</button>
+                        <button type="submit" class="border-2 border-indigo-100 bg-yellow-200 text-blue-900 text-md text-center py-1 px-1 mb-1 rounded-md  shadow-sm">Logout</button>
                     </form>
                 </li>
             </ul>
@@ -69,7 +77,7 @@
                     </button>
                         <ul class="">
                             <li>
-                                <a href="{{ route('auth#category') }}" class="text-lg text-blue-900 ml-40 my-2">
+                                <a href="{{ route('receipt#create') }}" class="text-lg text-blue-900 ml-40 my-2">
                                     @yield('receipt')
                                 </a>
                             </li>
@@ -98,10 +106,16 @@
                             <div class="border-b-2 border-gray-300 w-96 my-4">
 
                             </div>
+                            <li >
+                                <a href="{{ route('Donor#create') }}" class="text-lg text-blue-900 ml-40 my-2">
+                                    @yield('everything')
+                                </a>
+                            </li>
+                            <div class="border-b-2 border-gray-300 w-96 my-4"></div>
                             <li>
                                 <form action="{{ route('logout') }}" method="post" class="ml-40 my-1">
                                     @csrf
-                                    <button type="submit" class="border-1 border-red-500 bg-red-400 text-md text-center py-1 px-1 mb-1 rounded-lg shadow-sm">Logout</button>
+                                    <button type="submit" class="border-2 border-indigo-100 bg-yellow-200 text-blue-900 text-md text-center py-1 px-1 mb-1 rounded-md  shadow-sm">Logout</button>
                                 </form>
                             </li>
                         </ul>

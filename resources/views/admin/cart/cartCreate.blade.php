@@ -120,7 +120,7 @@
 
 
 
-</div>
+</div> 
 
 
 
@@ -334,7 +334,8 @@
     <div class="my-3">
         {{$rec->links()}}
     </div>
-</div>
+
+ </div>
 
 
 

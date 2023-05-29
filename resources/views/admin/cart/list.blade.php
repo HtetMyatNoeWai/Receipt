@@ -23,9 +23,10 @@
             <img src="{{ asset('admin/images/OIP (2).jpg') }}" class="w-24 h-20 sm:ml-16 mb-1 ml-44">
 
         <div class=" ">
-            <ul class="sm:grid gap-2 grid-cols-6 mt-6 mr-6  hidden">
+            <ul class="sm:grid gap-2 grid-cols-7 mt-6 mr-6  hidden">
+
                 <li class="mt-2.5">
-                    <a href="{{route('cart#create')}}" class="text-md text-blue-900">
+                    <a href="{{ route('receipt#create') }}" class="text-md text-blue-900">
                         @yield('receipt')
                     </a>
                 </li>
@@ -75,7 +76,7 @@
          </button>
              <ul class="">
                 <li>
-                    <a href="{{route('cart#create')}}" class="text-lg text-blue-900 ml-40 my-2">
+                    <a href="{{ route('receipt#create') }}" class="text-lg text-blue-900 ml-40 my-2">
                         @yield('receipt')
                     </a>
                 </li>
@@ -115,7 +116,7 @@
                  <li>
                      <form action="{{ route('logout') }}" method="post" class="ml-40 my-2">
                          @csrf
-                         <button type="submit" class="border-1 border-red-500 bg-red-400 text-lg text-center py-1 px-1 mb-1 rounded-2 shadow-sm">Logout</button>
+                         <button type="submit" class="border-2 border-indigo-100 bg-yellow-200 text-blue-900 text-md text-center py-1 px-1 mb-1 rounded-md  shadow-sm">Logout</button>
                      </form>
                  </li>
              </ul>

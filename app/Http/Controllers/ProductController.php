@@ -13,22 +13,23 @@ class ProductController extends Controller
     //create title page
     public function createPage(){
         $category=Category::select('categories.id','categories.type_of_donation')->get();
-        $detail=TitleDetail::select('title_details.id','title_details.title')->get();
+
         $product=Product::when(request('key'),function($query){
             $query->where('products.product_name','like','%'.request('key').'%');
             })
-                        ->select('products.*','categories.type_of_donation as category_name','title_details.title')
+                        ->select('products.*','categories.type_of_donation as category_name')
                         ->join('categories','products.category_id','categories.id')
-                        ->join('title_details','products.title_id','title_details.id')
+                        
                         ->paginate(5);
-        return view('admin.title.create',compact('category','detail','product'));
+
+        return view('admin.title.create',compact('category','product'));
     }
 
 
 
     //post title page
     public function postTitle(Request $request){
-        $this->validateTitle($request);
+
         $datas=$this->createTitle($request);
         Product::create($datas);
         return redirect()->route('title#create');
@@ -44,7 +45,7 @@ class ProductController extends Controller
 
     //update title page
     public function updateTitle(Request $request){
-        $this->validateTitle($request);
+        
         $title=$this->createTitle($request);
         Product::where('id',$request->title_id)->update($title);
         return redirect()->route('title#create');
@@ -52,19 +53,11 @@ class ProductController extends Controller
 
 
 
-
-    private function validateTitle($request){
-        Validator::make($request->all(),[
-            'name' => 'required|unique:products,product_name',
-
-        ])->validate();
-    }
-
     private function createTitle($request){
         return [
             'product_name'=>$request->name,
             'category_id'=>$request->categoryName,
-            'title_id'=>$request->detailName,
+
         ];
     }
 }

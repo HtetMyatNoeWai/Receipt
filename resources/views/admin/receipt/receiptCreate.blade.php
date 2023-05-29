@@ -55,11 +55,11 @@
             </tr>
             <tr>
                 <td class="left">Name/အမည်</td>
-                <td class="right">{{  $users->name }}</td>
+                <td class="right">{{  $users->dname }}</td>
             </tr>
             <tr>
                 <td class="left">Address/လိပ်စာ</td>
-                <td class="right">{{  $users->address }}</td>
+                <td class="right">{{  $users->daddress }}</td>
             </tr>
             <tr>
                 <td class="left">Amount/အလှူငွေ</td>
@@ -67,16 +67,16 @@
             </tr>
             <tr>
                 <td class="left">For/မှတ်ချက်</td>
-                <td class="right">{{  $users->product_name }}</td>
+                <td class="right">{{  $users->pname }}</td>
             </tr>
-            <tr>
+            {{-- <tr>
                 <td class="left">Detail/အသေးစိတ်</td>
                 <td class="right">{{  $users->title }}</td>
-            </tr>
-            <tr>
+            </tr> --}}
+            {{-- <tr>
                 <td class="left">Category/အလှူပဒေသာပင်</td>
                 <td class="right">{{  $users->type_of_donation }}</td>
-            </tr>
+            </tr> --}}
         </table>
         <table>
             <tr>
@@ -86,7 +86,7 @@
         </table>
         <table>
             <tr>
-                <td class="first">{{  $users->receiver_name }}</td>
+                <td class="first">{{  $users->dreceiver }}</td>
                 <td class="foot"></td>
                 <td class="first"></td>
             </tr>

@@ -1,0 +1,13 @@
+ id name        address	 receiver_name	 created_at	 updated_at
+ 2 ဦးလှ MDY Bo Bo 2023-05-24 09:31:35 2023-05-24 09:58:56
+
+
+ donation_product
+ id donation_id product_id
+ 1  2           1
+ 2  2           2
+
+
+select products.* from donation where donation.id = 2
+join donation_product on donation.id = donation_product.id
+join products on products.id = donation_product.id;

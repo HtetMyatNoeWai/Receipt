@@ -15,4 +15,6 @@ class Product extends Model
         'title_id',
 
     ];
+
+    
 }
