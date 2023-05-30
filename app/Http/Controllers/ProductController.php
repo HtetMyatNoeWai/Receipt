@@ -19,7 +19,7 @@ class ProductController extends Controller
             })
                         ->select('products.*','categories.type_of_donation as category_name')
                         ->join('categories','products.category_id','categories.id')
-                        
+
                         ->paginate(5);
 
         return view('admin.title.create',compact('category','product'));
@@ -45,7 +45,7 @@ class ProductController extends Controller
 
     //update title page
     public function updateTitle(Request $request){
-        
+
         $title=$this->createTitle($request);
         Product::where('id',$request->title_id)->update($title);
         return redirect()->route('title#create');

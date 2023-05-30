@@ -81,7 +81,7 @@
 </div>
 
     <div class=" sm:px-auto pt-4 sm:mx-10 h-96">
-        <table class=" border-spacing rounded-sm border-2 shadow-lg w-full ">
+        <table class=" border-spacing rounded-sm border-2 shadow-lg w-full " id="tabl">
             <thead>
               <tr class="bg-green-300 text-center">
                 <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">စဉ်</th>
@@ -142,7 +142,7 @@
                                     <button class="w-1/3 shadow   border rounded-lg my-2 py-2 px-2.5 text-dark bg-indigo-500 mr-1.5 outline-none" type="submit">
                                         <h6 class="text-white text-md">Update</h6>
                                     </button>
-                                    
+
                                 </div>
                             </form>
                         </div>
