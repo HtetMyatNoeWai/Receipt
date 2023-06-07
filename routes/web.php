@@ -146,8 +146,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     });
 
 
-    //Filter
-    Route::get('filterCreate',[CartController::class,'filterCreate'])->name('create#filter');
+
 
 
 

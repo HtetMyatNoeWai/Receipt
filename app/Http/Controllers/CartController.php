@@ -10,6 +10,7 @@ use App\Models\donor;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\donor_product;
 use App\Models\TitleDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -131,9 +132,6 @@ class CartController extends Controller
     }
 
 
-    public function filterCreate(){
-        return view('admin.filterTesting');
-    }
 
 }
 
