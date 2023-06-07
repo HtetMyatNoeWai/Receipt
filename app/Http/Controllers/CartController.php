@@ -130,6 +130,11 @@ class CartController extends Controller
         return $pdf->stream();
     }
 
+
+    public function filterCreate(){
+        return view('admin.filterTesting');
+    }
+
 }
 
 

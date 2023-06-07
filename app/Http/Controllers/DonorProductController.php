@@ -59,7 +59,7 @@ public function certificatePDF($product_id){
 
     $attribute=donor_product::select('donor_products.*','donors.name as dname','donors.address as daddress','donors.receiver_name as dreceiver')
                             ->join('donors','donor_products.donor_id','donors.id')
-
+                            ->where('donor_products.donor_id',$product_id)
                             ->first();
 
                             $totalPrice=0;
@@ -93,6 +93,10 @@ public function receiptPDF($id){
 
     return $pdf->stream();
 }
+
+
+
+
 
 
 }

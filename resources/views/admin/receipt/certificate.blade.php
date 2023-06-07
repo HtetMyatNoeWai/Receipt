@@ -36,6 +36,7 @@
             </tr>
         </table>
         <table>
+
             <tr>
                 <td class="cer"></td>
                 <td class="certificate1">{{$attribute->daddress }} နေ</td>
@@ -44,6 +45,7 @@
                 <td class="cer"></td>
                 <td class="certificate2">{{$attribute->dname }} မှ</td>
             </tr>
+
         </table>
         {{-- <div>{{ $certificate }}</div> --}}
         <table>

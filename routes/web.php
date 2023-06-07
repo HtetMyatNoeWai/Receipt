@@ -1,21 +1,22 @@
 <?php
 
+use App\Models\Cart;
+use App\Models\Product;
 use App\Models\Category;
+use GuzzleHttp\Middleware;
 use App\Models\TitleDetail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonorController;
+use App\Http\Controllers\TitleController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TestingController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TitleDetailController;
+use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf;
 use App\Http\Controllers\DonorProductController;
 use App\Http\Controllers\ProductTitleController;
-use App\Http\Controllers\TestingController;
-use App\Http\Controllers\TitleController;
-use App\Http\Controllers\TitleDetailController;
-use App\Models\Cart;
-use GuzzleHttp\Middleware;
-use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,24 +141,33 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('certificate/{product_id}',[DonorProductController::class,'certificatePDF'])->name('certificate#pdf');
 
         Route::get('receiptPDF/{id}',[DonorProductController::class,'receiptPDF'])->name('receipt#pdf');
+
+
     });
 
+
+    //Filter
+    Route::get('filterCreate',[CartController::class,'filterCreate'])->name('create#filter');
 
 
 
     //Join Table
     Route::group(['prefix'=>'Tables','middleware'=>'admin_middleware'],function(){
 
-      
+
 
         Route::get('linkCreate',[ProductTitleController::class,'linkCreate'])->name('link#create');
 
-        Route::get('filter/{id}',[ProductTitleController::class,'filter'])->name('link#filter');
+        Route::get('filterLink',[ProductTitleController::class,'filterLink'])->name('filter#link');
 
-        Route::get('filterP/{id}',[ProductTitleController::class,'filterP'])->name('link#filterP');
+        Route::get('allLink',[ProductTitleController::class,'allLink'])->name('all#link');
 
-        // Route::get('linkPost',[ProductController::class,'linkPost'])->name('link#post');
+        Route::get('allCatLink',[ProductTitleController::class,'allCatLink'])->name('all#cat');
+
+        Route::get('chooseFilter',[ProductTitleController::class,'chooseFilter'])->name('choose#filter');
+
     });
+
 
 
 
