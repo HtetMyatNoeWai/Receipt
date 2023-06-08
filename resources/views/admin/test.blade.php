@@ -41,7 +41,7 @@
         @foreach($donor as $donate)
         <a href="{{ route('certificate#pdf',$donate->id) }}">{{ $donate->name }}</a>
         @endforeach
-    
+
     </div>
     <div>
 

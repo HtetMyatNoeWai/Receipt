@@ -12,17 +12,20 @@ class DonorProductController extends Controller
 {
     //Create Receipt
     public function createReceipt(){
-        $donor=donor::select('donors.id','donors.name','donors.address','donors.receiver_name')->get();
+        $donor=donor::select('donors.id','donors.name','donors.address','donors.receiver_name')
+                    ->orderBy('donors.id','desc')
+                    ->get();
         $product=Product::select('products.id','products.product_name')->get();
         $data=donor_product::select('donor_products.*','donors.name as dname','donors.address as daddress','donors.receiver_name as dreceiver','products.product_name as pname')
                             ->join('donors','donor_products.donor_id','donors.id')
                             ->join('products','donor_products.product_id','products.id')
-                            ->get();
+                            ->orderBy('donors.id','desc')
+                            ->paginate(20);
 
 
 
 
-        return view('admin.test',compact('donor','product','data'));
+        return view('admin.receipt.receipt',compact('donor','product','data'));
     }
 
     //Post Recipt

@@ -63,7 +63,7 @@
             </tr>
             <tr>
                 <td class="left">Amount/အလှူငွေ</td>
-                <td class="right">{{  $users->amount }}</td>
+                <td class="right">{{  $users->amount }} ကျပ်</td>
             </tr>
             <tr>
                 <td class="left">For/မှတ်ချက်</td>
@@ -160,7 +160,7 @@
             </tr>
             <tr>
                 <td class="left">Amount/အလှူငွေ</td>
-                <td class="right">{{  $users->amount }}</td>
+                <td class="right">{{  $users->amount }} ကျပ်</td>
             </tr>
             <tr>
                 <td class="left">For/မှတ်ချက်</td>
