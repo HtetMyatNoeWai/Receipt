@@ -52,11 +52,11 @@
 .left{
     width: 40%;
     font-size:20px;
-    padding:25px;
+    padding:15px;
 }
 .right{
      font-size:20px;
-     border-bottom: 2px dotted gray;
+     border-bottom: 1px dotted gray;
 }
 .mlogo{
    padding-left:50px;
@@ -66,18 +66,21 @@
     padding-left: 50%;
 }
 .first{
-    padding-top:7%;
-    border-bottom: 2px dotted gray;
+    padding-top:2.5%;
+    border-bottom: 1px dotted gray;
     text-align: center;
     padding-bottom:1%;
 }
 .type{
     padding-left:30%;
-    padding-top:3%;
+    padding-top:2%;
     text-align:center;
 }
 .R{
-    padding-top:1%;
+    padding-top:0.5%;
+}
+.horizon{
+    border-bottom: 1px  gray;
 }
 
 

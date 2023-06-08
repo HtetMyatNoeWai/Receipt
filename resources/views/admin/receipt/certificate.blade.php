@@ -39,17 +39,17 @@
 
             <tr>
                 <td class="cer"></td>
-                <td class="certificate1">{{$attribute->daddress }} နေ</td>
+                <td class="certificate1">{{$donor->daddress }} နေ</td>
             </tr>
             <tr>
                 <td class="cer"></td>
-                <td class="certificate2">{{$attribute->dname }} မှ</td>
+                <td class="certificate2">{{$donor->dname }} မှ</td>
             </tr>
 
         </table>
         {{-- <div>{{ $certificate }}</div> --}}
         <table>
-            @foreach($certificate as $cer)
+            @foreach($data as $cer)
             <tr>
                 <td class="pro">{{$cer->pname  }}အတွက် အလှူတော်ငွေ-{{$cer->amount }} </td>
             </tr>
@@ -83,7 +83,7 @@
                 <td class="foot2">အဂ္ဂမဟာသဒ္ဓမ္မဇောတိကဓဇ၊ အဂ္ဂမဟာဂန္ထဝါစကပဏ္ဍိတ၊ မဟာဓမ္မကထိကဗဟုဇနဟိတရေ</td>
             </tr>
             <tr>
-                <td class="foot3">{{$attribute->created_at->Format('j-F-Y') }}</td>
+                <td class="foot3">{{$donor->created_at->Format('j-F-Y') }}</td>
             </tr>
         </table>
     </div>

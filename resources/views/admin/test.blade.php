@@ -30,12 +30,24 @@
             <h1>{{ $da->amount }}</h1>
             <h1></h1>
 
-            <a href="{{ route('certificate#pdf',$da->product_id) }}">PDF</a>
+           
             <a href="{{ route('receipt#pdf',$da->id) }}">Rec</a>
         @endforeach
 
     </div>
+    <br>
+    <br>
+    <div>
+        @foreach($donor as $donate)
+        <a href="{{ route('certificate#pdf',$donate->id) }}">{{ $donate->name }}</a>
+        @endforeach
+    
+    </div>
+    <div>
 
+    </div>
 
+    <br>
+    <br>
 
 @endsection

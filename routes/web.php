@@ -138,15 +138,14 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::post('postReceipt',[DonorProductController::class,'postReceipt'])->name('receipt#post');
 
         //PDF
-        Route::get('certificate/{product_id}',[DonorProductController::class,'certificatePDF'])->name('certificate#pdf');
+        Route::get('certificate/{id}',[DonorProductController::class,'certificatePDF'])->name('certificate#pdf');
 
         Route::get('receiptPDF/{id}',[DonorProductController::class,'receiptPDF'])->name('receipt#pdf');
 
+         
+
 
     });
-
-
-
 
 
 
@@ -166,6 +165,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('chooseFilter',[ProductTitleController::class,'chooseFilter'])->name('choose#filter');
 
     });
+
 
 
 

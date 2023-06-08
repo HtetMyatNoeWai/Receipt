@@ -43,7 +43,7 @@ class DonorProductController extends Controller
     }
 
 // Certificate Create
-public function certificatePDF($product_id){
+public function certificatePDF($donorId){
 
 
     $mpdf = new \Mpdf\Mpdf();
@@ -51,24 +51,23 @@ public function certificatePDF($product_id){
     $mpdf->debug = true;
 
 
-    $certificate=donor_product::select('donor_products.*','donors.name as dname','donors.address as daddress','donors.receiver_name as dreceiver','products.product_name as pname')
-                                ->join('donors','donor_products.donor_id','donors.id')
-                                ->join('products','donor_products.product_id','products.id')
-                                ->where('donor_products.donor_id',$product_id)
-                                ->get();
+    $data=donor_product::select('donor_products.*','donors.name as dname','donors.address as daddress','donors.receiver_name as dreceiver','products.product_name as pname')
+                        ->join('donors','donor_products.donor_id','donors.id')
+                        ->join('products','donor_products.product_id','products.id')
+                        ->where('donor_id',$donorId)->get();
 
-    $attribute=donor_product::select('donor_products.*','donors.name as dname','donors.address as daddress','donors.receiver_name as dreceiver')
-                            ->join('donors','donor_products.donor_id','donors.id')
-                            ->where('donor_products.donor_id',$product_id)
-                            ->first();
 
-                            $totalPrice=0;
-                            foreach($certificate as $c)
-                            $totalPrice += $c->amount;
+    $donor=donor_product::select('donor_products.*','donors.name as dname','donors.address as daddress','donors.receiver_name as dreceiver')
+                        ->join('donors','donor_products.donor_id','donors.id')
+                        ->where('donor_id',$donorId)->first();
 
-    $pdf= LaravelMpdf::loadView('admin.receipt.certificate', compact('certificate','attribute','totalPrice'),['format'=>'A4']);
+        $totalPrice=0;
+        foreach($data as $c)
+        $totalPrice += $c->amount;
 
-    return $pdf->stream();
+$pdf= LaravelMpdf::loadView('admin.receipt.certificate', compact('donor','data','totalPrice'),['format'=>'A4']);
+
+return $pdf->stream();
 }
 
 

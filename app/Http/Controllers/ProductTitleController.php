@@ -69,4 +69,7 @@ class ProductTitleController extends Controller
         $details=$query->get();
         return view('admin.link',compact('products','details'));
     }
+
+
+
 }
