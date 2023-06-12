@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Certificate</title>
     <link rel="stylesheet" href="{{ public_path('admin/css/next.css') }}">
+
+    <style>
+
+        @page { sheet-size: A4-L; }
+    </style>
 </head>
 <body>
     <div class="back">
@@ -51,11 +56,11 @@
         <table>
             @foreach($data as $cer)
             <tr>
-                <td class="pro">{{$cer->pname  }}အတွက် အလှူတော်ငွေ-{{$cer->amount }} </td>
+                <td class="pro">> {{$cer->pname  }}အတွက် အလှူတော်ငွေ-{{$cer->amount }} ကျပ် </td>
             </tr>
             @endforeach
             <tr>
-                <td class="pro"> စုစုပေါင်း{{ $totalPrice }} ကျပ်လှူဒါန်းပါသည်။</td>
+                <td class="pro">  စုစုပေါင်း အလှူတော်ငွေ-{{ $totalPrice }} ကျပ်လှူဒါန်းပါသည်။</td>
             </tr>
             <tr>
                 <td class="pro1">ဤကဲ့သို့ ဗုဒ္ဓမြတ်စွာ သာသနာတော်အတွက် နိဗ္ဗာန်ရည်မှန်း၍ လှူဒါန်းချီးမြှောက်ထောက်ပံ့သည့်အတွက်</td>

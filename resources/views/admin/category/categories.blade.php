@@ -39,11 +39,7 @@
                                             <div class="w-4/5 ">
                                                 <input class=" ml-11 border-2 border-blue-300 rounded-lg mt-6 w-full py-2.5 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="cat_name" placeholder="Add Category">
                                             </div>
-                                            @error('cat_name')
-                                                <small class="text-red-500 ">
-                                                    {{ $message }}
-                                                </small>
-                                            @enderror
+
                                             <div class="  w-5/12 ">
                                                 <button class="shadow mt-6 w-2/4 ml-14 border-2 rounded-lg py-2 px-2 text-dark bg-blue-500  outline-none" type="submit">
                                                     <h6 class="text-white text-lg">Save   </h6>
@@ -200,6 +196,7 @@
 
                         </td>
                       </tr>
+
                       @endforeach
                     </tbody>
                 </table>
@@ -207,6 +204,11 @@
         </div>
 
 
+        <br>
+        <br>
+        <a href="{{ route('test#create') }}">Testing</a>
+        <br>
+        <br>
 
 
 @endsection

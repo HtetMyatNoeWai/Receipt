@@ -8,7 +8,9 @@
     <title>View</title>
 <link rel="stylesheet" href="{{ public_path('admin/css/index.css') }}">
 </head>
+   
 <body>
+    
     <div class="nav">
         <table class="color">
             <tr >
@@ -53,7 +55,7 @@
             <tr>
                 <th></th>
             </tr>
-            <tr>
+            <tr class="table">
                 <td class="left">Name/အမည်</td>
                 <td class="right">{{  $users->dname }}</td>
             </tr>
@@ -102,6 +104,7 @@
     <br>
 
 
+    <br>
     <hr class="horizon">
     <br>
     <br>

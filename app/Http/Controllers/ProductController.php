@@ -20,7 +20,7 @@ class ProductController extends Controller
                         ->select('products.*','categories.type_of_donation as category_name')
                         ->join('categories','products.category_id','categories.id')
 
-                        ->paginate(5);
+                        ->paginate(10);
 
         return view('admin.title.create',compact('category','product'));
     }

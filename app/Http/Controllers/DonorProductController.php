@@ -54,6 +54,7 @@ public function certificatePDF($donorId){
     $mpdf->debug = true;
 
 
+
     $data=donor_product::select('donor_products.*','donors.name as dname','donors.address as daddress','donors.receiver_name as dreceiver','products.product_name as pname')
                         ->join('donors','donor_products.donor_id','donors.id')
                         ->join('products','donor_products.product_id','products.id')
@@ -68,7 +69,7 @@ public function certificatePDF($donorId){
         foreach($data as $c)
         $totalPrice += $c->amount;
 
-$pdf= LaravelMpdf::loadView('admin.receipt.certificate', compact('donor','data','totalPrice'),['format'=>'A4']);
+$pdf= LaravelMpdf::loadView('admin.receipt.certificate', compact('donor','data','totalPrice'));
 
 return $pdf->stream();
 }
@@ -97,7 +98,18 @@ public function receiptPDF($id){
 }
 
 
+// Delete Receipt
+public function deleteReceipt($id){
+    donor_product::where('id',$id)->delete();
+    return redirect()->route('receipt#create');
+}
 
+//Update Receipt
+public function updateReceipt(Request $request){
+    $update=$this->creationReceipt($request);
+    donor_product::where('id',$request->donorId)->update($update);
+    return redirect()->route('receipt#create');
+}
 
 
 

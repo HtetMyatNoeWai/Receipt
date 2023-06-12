@@ -142,7 +142,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
         Route::get('receiptPDF/{id}',[DonorProductController::class,'receiptPDF'])->name('receipt#pdf');
 
-         
+        Route::get('deleteReceipt/{id}',[DonorProductController::class,'deleteReceipt'])->name('receipt#delete');
+
+        Route::post('updateReceipt',[DonorProductController::class,'updateReceipt'])->name('receipt#update');
+
 
 
     });
@@ -166,6 +169,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     });
 
+
+
+
+// Testing joining
+    Route::get('testCreate',[CartController::class,'testCreate'])->name('test#create');
+
+    Route::post('testPost',[CartController::class,'testPost'])->name('test#post');
+
+    Route::get('testFilter',[CartController::class,'testFilter'])->name('test#filter');
 
 
 

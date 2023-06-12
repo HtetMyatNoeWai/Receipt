@@ -23,23 +23,23 @@
         <div class=" ">
             <ul class="sm:grid gap-3 grid-cols-7 mt-6 mr-6  hidden">
                 <li>
-                    <a href="{{ route('receipt#create') }}" class="text-lg text-blue-900">
+                    <a href="{{ route('receipt#create') }}" class="text-md text-blue-900">
                         @yield('receipt')
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('auth#category') }}" class="text-lg text-blue-900">
+                    <a href="{{ route('auth#category') }}" class="text-md text-blue-900">
                         @yield('something')
                     </a>
                 </li>
                 <li class="ml-3">
-                    <a href="{{ route('detail#create') }}" class="text-lg text-blue-900">
-                        @yield('nothing')
+                    <a href="{{ route('title#create') }}" class="text-md  text-blue-900">
+                        @yield('anything')
                     </a>
                 </li>
                 <li >
-                    <a href="{{ route('title#create') }}" class="text-lg  text-blue-900">
-                        @yield('anything')
+                    <a href="{{ route('detail#create') }}" class="text-md text-blue-900">
+                        @yield('nothing')
                     </a>
                 </li>
                 <li class="">
@@ -93,15 +93,15 @@
 
                             </div>
                             <li>
-                                <a href="{{ route('detail#create') }}" class="text-lg text-blue-900 ml-40 my-2">
-                                    @yield('nothing')
-                                </a>
+                                <a href="{{ route('title#create') }}" class="text-lg text-blue-900 ml-40 my-2">@yield('anything')</a>
                             </li>
                             <div class="border-b-2 border-gray-300 w-96 my-4">
 
                             </div>
                             <li>
-                                <a href="{{ route('title#create') }}" class="text-lg text-blue-900 ml-40 my-2">@yield('anything')</a>
+                                <a href="{{ route('detail#create') }}" class="text-lg text-blue-900 ml-40 my-2">
+                                    @yield('nothing')
+                                </a>
                             </li>
                             <div class="border-b-2 border-gray-300 w-96 my-4">
 

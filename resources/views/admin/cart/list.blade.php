@@ -36,13 +36,13 @@
                     </a>
                 </li>
                 <li class="ml-3.5 mt-2.5">
-                    <a href="{{ route('detail#create') }}" class="text-md  text-blue-900">
-                        @yield('nothing')
-                    </a>
-                </li>
-                <li class="mt-2.5">
                     <a href="{{ route('title#create') }}" class="text-md  text-blue-900">
                         @yield('anything')
+                    </a>
+                </li>
+                <li class=" mt-2.5">
+                    <a href="{{ route('detail#create') }}" class="text-md  text-blue-900">
+                        @yield('nothing')
                     </a>
                 </li>
                 <li class="mt-2.5">
@@ -92,6 +92,12 @@
 
                  </div>
                  <li>
+                    <a href="{{ route('title#create') }}" class="text-lg text-blue-900 ml-40 my-2">@yield('anything')</a>
+                </li>
+                <div class="border-b-2 border-gray-300 w-96 my-4">
+
+                </div>
+                 <li>
                     <a href="{{ route('detail#create') }}" class="text-lg text-blue-900 ml-40 my-2">
                         @yield('nothing')
                     </a>
@@ -99,12 +105,6 @@
                 <div class="border-b-2 border-gray-300 w-96 my-4">
 
                 </div>
-                 <li>
-                     <a href="{{ route('title#create') }}" class="text-lg text-blue-900 ml-40 my-2">@yield('anything')</a>
-                 </li>
-                 <div class="border-b-2 border-gray-300 w-96 my-4">
-
-                 </div>
                  <li >
                     <a href="{{ route('Donor#create') }}" class="text-lg text-blue-900 ml-40 my-2">
                         @yield('everything')

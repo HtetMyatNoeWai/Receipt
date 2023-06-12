@@ -44,7 +44,7 @@
     width:40%;
 }
 .date{
-    font-size:20px;
+    font-size:21px;
 }
 .blank{
     width:25%;
@@ -70,14 +70,17 @@
     border-bottom: 1px dotted gray;
     text-align: center;
     padding-bottom:1%;
+    font-size:15px;
 }
 .type{
     padding-left:30%;
     padding-top:2%;
     text-align:center;
+    font-size:15px;
 }
 .R{
     padding-top:0.5%;
+    font-size:15px;
 }
 .horizon{
     border-bottom: 1px  gray;

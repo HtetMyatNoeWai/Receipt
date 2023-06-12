@@ -27,7 +27,7 @@
                                     <i class="fa-solid fa-rectangle-xmark"></i>
                                 </button>
                             <!--header-->
-                                <h1 class="text-xl ml-9 mb-3 text-indigo-900 ">Add Detail</h1>
+                                <h1 class="text-xl ml-44 mb-3 text-indigo-900 ">Add Detail</h1>
 
                                     <form action="{{ route('detail#post') }}" method="post" class="bg-yellow-100 rounded  mb-14">
                                         @csrf
@@ -37,15 +37,15 @@
                                                 @foreach ($product as $p )
                                                 <option value="{{ $p->id }}">{{ $p->product_name }}</option>
                                                 @endforeach
-            
+
                                             </select>
                                         </div>
                                         <div class=" w-96 mb-2">
                                             <input class="shadow-sm ml-8 border-2 border-blue-300 rounded-lg w-11/12 py-2.5 px-2 text-dark bg-gray-50 outline-none" id="username" type="text" name="detail_name" placeholder="Add Detail">
                                         </div>
-                                       
-                                        <div class=" w-5/12">
-                                            <button class="shadow  w-2/4 ml-10  border-2 rounded-lg py-2 px-2.5 text-dark bg-blue-500  outline-none" type="submit">
+
+                                        <div class=" w-5/12 ml-44 mt-3">
+                                            <button class="shadow  w-2/4   border-2 rounded-lg py-2 px-2.5 text-dark bg-blue-500  outline-none" type="submit">
                                                 <h6 class="text-white text-lg">Save</h6>
                                             </button>
                                         </div>
@@ -102,7 +102,7 @@
 
                                 <!-- The dialog -->
                                 <div id="content{{ $index }}"
-                                    class=" hidden sm:fixed absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-2 space-y-5 drop-shadow-lg bg-yellow-200 mb-12">
+                                    class=" hidden sm:fixed absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto rounded-md px-8 py-2 space-y-5 drop-shadow-lg bg-yellow-200 mb-12">
                                     <button id="finish{{ $index }}" class="ml-80 my-1 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150">
                                         <i class="fa-solid fa-rectangle-xmark"></i>
                                     </button>
@@ -116,7 +116,7 @@
                                                     @foreach ($product as $p )
                                                     <option value="{{ $p->id }}">{{ $p->product_name }}</option>
                                                     @endforeach
-                
+
                                                 </select>
                                             </div>
                                             <div class="w-96 ">
@@ -128,7 +128,7 @@
                                                 {{ $message }}
                                             </small>
                                             @enderror
-                                            <div class="  w-1/4 ">
+                                            <div class="  w-1/4 mt-1 mx-auto">
                                                 <button class="shadow border rounded-lg my-2 py-2 px-2 text-dark bg-blue-500  outline-none" type="submit">
                                                     <h6 class="text-white text-md">Update</h6>
                                                 </button>

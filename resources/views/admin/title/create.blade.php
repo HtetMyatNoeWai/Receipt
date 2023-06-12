@@ -87,7 +87,7 @@
                 <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">စဉ်</th>
                 <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">အလှူပဒေသာပင်များ</th>
                 <th class="border  sm:text-xl text-sm px-1 py-2 font-bold">အလှူပဒေသာပင်များ အသေးစိတ်</th>
-                <th class="border  sm:text-xl text-sm px-1 py-2 font-bold">အကြောင်းအရာ</th>
+                
                 <th class="border  sm:text-xl text-sm px-1 py-2 font-bold">အခြား</th>
               </tr>
             </thead>
@@ -97,7 +97,7 @@
                 <td class="border  sm:text-lg  text-sm px-2 py-3 text-center">{{$loop->iteration }}</td>
                 <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $pr->category_name }}</td>
                 <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $pr->product_name}}</td>
-                <td class="border sm:text-lg  text-sm px-5 py-3 text-left">{{ $pr->title }}</td>
+                
                 <td class="border sm:text-lg  text-sm px-0.5 py-3 text-center">
 
 
@@ -114,10 +114,10 @@
                     <!-- The dialog -->
                     <div id="UpdateDialog{{ $index }}"
                         class="border-2 border-yellow-500 hidden sm:fixed absolute z-50 top-1/2  left-1/2  -translate-x-1/2 -translate-y-1/2 w-96 rounded-md px-8 py-2  drop-shadow-lg bg-yellow-100">
-                        <button id="updateClose{{ $index }}" class="  border my-2 text-dark bg-red-500  outline-none ease-linear transition-all duration-150">
+                        <button id="updateClose{{ $index }}" class="  ml-80  my-1 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150">
                             <i class="fa-solid fa-rectangle-xmark "></i>
                         </button>
-                        <h1 class="text-xl font-semibold text-indigo-900 mt-5">Update Category</h1>
+                        <h1 class="text-xl font-semibold text-indigo-900 mt-3">Update Category</h1>
                         <div class="relative  flex-auto w-full mb-3.5">
                             <form action="{{ route('title#update') }}" method="post" class="bg-yellow-100 rounded p-3 mb-1.5 flex flex-col items-center justify-center ">
                                 @csrf
@@ -241,6 +241,8 @@
 
     </div>
 </div>
-
+<br>
+<br>
+<br>
 
 @endsection

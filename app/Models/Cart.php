@@ -9,10 +9,8 @@ class Cart extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'product_id',
-        'donor_id',
-        'amount',
-        'total',
-        'created_at',
+        'cat_id',
+        'p_id',
+        't_id',
     ];
 }
