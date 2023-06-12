@@ -12,9 +12,9 @@ class Product extends Model
 
         'category_id',
         'product_name',
-        'title_id',
+
 
     ];
 
-    
+
 }

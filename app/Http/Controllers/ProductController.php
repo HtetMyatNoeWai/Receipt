@@ -12,17 +12,15 @@ class ProductController extends Controller
 {
     //create title page
     public function createPage(){
-        $category=Category::select('categories.id','categories.type_of_donation')->get();
+
 
         $product=Product::when(request('key'),function($query){
             $query->where('products.product_name','like','%'.request('key').'%');
             })
-                        ->select('products.*','categories.type_of_donation as category_name')
-                        ->join('categories','products.category_id','categories.id')
 
                         ->paginate(10);
 
-        return view('admin.title.create',compact('category','product'));
+        return view('admin.title.create',compact('product'));
     }
 
 
@@ -56,7 +54,7 @@ class ProductController extends Controller
     private function createTitle($request){
         return [
             'product_name'=>$request->name,
-            'category_id'=>$request->categoryName,
+
 
         ];
     }

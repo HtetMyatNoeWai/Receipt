@@ -27,8 +27,8 @@ class CartController extends Controller
                 ->join('categories','carts.cat_id','categories.id')
                 ->join('products','carts.p_id','products.id')
                 ->join('title_details','carts.t_id','title_details.id')
-                ->get();
-    return view('admin.testCreate',compact('categories','products','titles','carts'));
+                ->paginate(15);
+    return view('admin.link',compact('categories','products','titles','carts'));
    }
 
    public function testPost(Request $request){
@@ -36,6 +36,22 @@ class CartController extends Controller
         Cart::create($data);
         return redirect()->route('test#create');
    }
+
+//    Update
+public function testUpdate(Request $request){
+    $carts=$this->createTesting($request);
+    Cart::where('id',$request->cId)->update($carts);
+    return redirect()->route('test#create');
+}
+
+
+// Delete
+public function testDelete($id){
+    Cart::where('id',$id)->delete();
+    return redirect()->route('test#create');
+}
+
+
 
    private function createTesting($request){
     return[
@@ -62,7 +78,7 @@ class CartController extends Controller
         $carts=$query->get();
         $products=$pro->get();
         $titles=$qu->get();
-        return view('admin.testCreate',compact('categories','products','titles','carts'));
+        return view('admin.link',compact('categories','products','titles','carts'));
    }
 
 }

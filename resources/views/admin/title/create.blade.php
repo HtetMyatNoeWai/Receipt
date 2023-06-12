@@ -23,7 +23,7 @@
 
           <!--content-->
             <div class="border-2 border-indigo-700 rounded-lg shadow-lg relative flex flex-col  bg-yellow-100  ">
-                <button class="ml-96 mt-2.5 mb-2 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
+                <button class="ml-96 pr-8 mt-3.5 mb-2 text-red-500 background-transparent font-bold uppercase  text-2xl  ease-linear transition-all duration-150" type="button" onclick="toggleModal('modal-id')">
                     <i class="fa-solid fa-rectangle-xmark"></i>
                 </button>
             <!--header-->
@@ -31,15 +31,7 @@
                     <div class="relative p-2.5 flex-auto w-full">
                         <form action="{{ route('title#post') }}" method="post" class="bg-yellow-100 rounded  flex flex-col items-center justify-center mb-4">
                             @csrf
-                            <div class="mt-1 w-96 ml-8">
-                                <select name="categoryName" id="" class="border-2 border-blue-300 rounded-lg my-2 w-11/12 py-2 px-0.5 text-dark bg-green-50 outline-none">
-                                    <option value="">Choose Category</option>
-                                    @foreach ($category as $c )
-                                    <option value="{{ $c->id }}">{{ $c->type_of_donation }}</option>
-                                    @endforeach
 
-                                </select>
-                            </div>
 
                             <div class="w-96  flex flex-col items-center justify-center">
                                 <input class="mt-3 border-2 border-blue-300 rounded-lg my-2 w-11/12 py-2 px-1.5 text-dark bg-green-50 outline-none" id="username" type="text" name="name" placeholder="Add Category" value="{{ old('name') }}">
@@ -85,9 +77,9 @@
             <thead>
               <tr class="bg-green-300 text-center">
                 <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">စဉ်</th>
-                <th class="border  sm:text-xl text-sm px-2 py-2 font-bold">အလှူပဒေသာပင်များ</th>
+
                 <th class="border  sm:text-xl text-sm px-1 py-2 font-bold">အလှူပဒေသာပင်များ အသေးစိတ်</th>
-                
+
                 <th class="border  sm:text-xl text-sm px-1 py-2 font-bold">အခြား</th>
               </tr>
             </thead>
@@ -95,9 +87,9 @@
             @foreach ($product as $index=>$pr)
               <tr class="bg-yellow-100 ">
                 <td class="border  sm:text-lg  text-sm px-2 py-3 text-center">{{$loop->iteration }}</td>
-                <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $pr->category_name }}</td>
-                <td class="border sm:text-lg  text-sm px-1.5 py-3 text-left">{{ $pr->product_name}}</td>
-                
+
+                <td class="border sm:text-lg  text-sm px-1.5 py-3 text-center">{{ $pr->product_name}}</td>
+
                 <td class="border sm:text-lg  text-sm px-0.5 py-3 text-center">
 
 
@@ -122,15 +114,7 @@
                             <form action="{{ route('title#update') }}" method="post" class="bg-yellow-100 rounded p-3 mb-1.5 flex flex-col items-center justify-center ">
                                 @csrf
 
-                            <div class=" w-96 ">
-                                <select name="categoryName"  id="" class="ml-0.5 shadow-sm text-md border-2 border-blue-300 rounded-lg my-2 w-11/12 py-1 px-1.5 text-dark bg-green-50  outline-none">
-                                    <option value="">Choose Category</option>
-                                    @foreach ($category as $c )
-                                    <option value="{{ $c->id }}">{{ $c->type_of_donation }}</option>
-                                    @endforeach
-                                </select>
 
-                            </div>
 
                                 <div class="w-96  flex flex-col items-center justify-center">
                                     <input type="hidden" name="title_id" value="{{ $pr->id }}">

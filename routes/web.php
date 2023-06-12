@@ -157,27 +157,33 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 
 
-        Route::get('linkCreate',[ProductTitleController::class,'linkCreate'])->name('link#create');
+        // Route::get('linkCreate',[ProductTitleController::class,'linkCreate'])->name('link#create');
 
-        Route::get('filterLink',[ProductTitleController::class,'filterLink'])->name('filter#link');
+        // Route::get('filterLink',[ProductTitleController::class,'filterLink'])->name('filter#link');
 
-        Route::get('allLink',[ProductTitleController::class,'allLink'])->name('all#link');
+        // Route::get('allLink',[ProductTitleController::class,'allLink'])->name('all#link');
 
-        Route::get('allCatLink',[ProductTitleController::class,'allCatLink'])->name('all#cat');
+        // Route::get('allCatLink',[ProductTitleController::class,'allCatLink'])->name('all#cat');
 
-        Route::get('chooseFilter',[ProductTitleController::class,'chooseFilter'])->name('choose#filter');
+        // Route::get('chooseFilter',[ProductTitleController::class,'chooseFilter'])->name('choose#filter');
+
+
+// Testing joining
+Route::get('testCreate',[CartController::class,'testCreate'])->name('test#create');
+
+Route::post('testPost',[CartController::class,'testPost'])->name('test#post');
+
+Route::get('testFilter',[CartController::class,'testFilter'])->name('test#filter');
+
+Route::post('testUpdate',[CartController::class,'testUpdate'])->name('test#update');
+
+Route::get('testDelete/{id}',[CartController::class,'testDelete'])->name('test#delete');
 
     });
 
 
 
 
-// Testing joining
-    Route::get('testCreate',[CartController::class,'testCreate'])->name('test#create');
-
-    Route::post('testPost',[CartController::class,'testPost'])->name('test#post');
-
-    Route::get('testFilter',[CartController::class,'testFilter'])->name('test#filter');
 
 
 

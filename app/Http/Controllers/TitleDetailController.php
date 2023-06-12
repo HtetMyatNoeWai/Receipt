@@ -12,16 +12,14 @@ class TitleDetailController extends Controller
 {
     //Create Detail
     public function createDetail(){
-        $product=Product::select('products.id','products.product_name')->get();
-        $post=TitleDetail::select('title_details.*','products.product_name')
-                            ->join('products','title_details.p_id','products.id')
-                            ->get();
-        return view('admin.detail.detailCreate',compact('post','product'));
+
+        $post=TitleDetail::get();
+        return view('admin.detail.detailCreate',compact('post'));
     }
 
     //Post Detail
     public function postDetail(Request $request){
-        
+
         $this->detailValidate($request);
         $data=$this->detailCreate($request);
         TitleDetail::create($data);
@@ -55,7 +53,7 @@ class TitleDetailController extends Controller
     private function detailCreate($request){
        return[
         'title' => $request -> detail_name,
-        'p_id'=>$request->productName,
+
        ];
 
     }

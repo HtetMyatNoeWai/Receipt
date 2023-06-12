@@ -66,7 +66,7 @@
             $('.category').on('click',function(){
                 var category=$(this).val();
                 $.ajax({
-                    url:"http://127.0.0.1:8000/testFilter",
+                    url:"http://127.0.0.1:8000/Tables/testFilter",
                     type: 'GET',
                     data:{'category':category},
                     success:function(data){

@@ -19,7 +19,7 @@
                     </div>
                     <div class="pt-5 ">
                         <button class=" text-dark bg-blue-200 font-bold rounded-lg border-1 border-dark shadow-md py-2 sm:px-4 px-2 mr-1 mb-1">
-                           <a href="{{ route('link#create') }}" >Product</a>
+                           <a href="{{ route('test#create') }}" >Product</a>
                         </button>
                     </div>
 
@@ -206,7 +206,7 @@
 
         <br>
         <br>
-        <a href="{{ route('test#create') }}">Testing</a>
+        
         <br>
         <br>
 
