@@ -34,7 +34,7 @@
             </form>
         </div>
         <hr class="border_b-2 text-gray-300 mt-3">
-        <div class="mt-2.5 px-2">
+        <div class="mt-2.5 px-2 bg-lime-200  rounded-md" id="tbody">
             <table class="w-full  rounded-md shadow-sm">
                 <tr class="">
                     <td class="border-2 border-gray-200 py-2 px-3 bg-lime-400 font-bold">Category</td>
@@ -51,7 +51,7 @@
 
                              {{-- For Update Buton --}}
                         <button id="opening{{ $index }}" class="text-dark cursor-pointer">
-                            <i class="fa-solid fa-pen-nib mr-3" >
+                            <i class="fa-solid fa-pen-nib mr-1.5" >
                             </i>
                         </button>
 
@@ -184,7 +184,7 @@
             </table>
         </div>
     </div>
-    <div class="w-3/12 bg-green-700 rounded-md shadow-sm mr-3 ">
+    <div class="w-4/12 bg-green-700 rounded-md shadow-sm mr-3 ">
         <h1 class="mt-9 text-xl font-bold text-gray-200 text-center">Category
             <i class="fa-solid fa-clipboard-list"></i>
 
@@ -206,13 +206,15 @@
     <br>
 </div>
 <div class="bg-lime-50 ">
-    <div id="tbody" class="bg-lime-200 mx-auto w-4/12 rounded-md">
+    {{-- <div id="tbody" class="bg-lime-200 mx-auto w-4/12 rounded-md">
 
-    </div>
-    <br>
+    </div> --}}
+
     <br>
     <div class="mr-3">
         {{$carts->links()}}
+        <br>
+        <br>
     </div>
 </div>
 
